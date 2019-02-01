@@ -1,3 +1,5 @@
 parameters:
     excludes_analyse:
         - %rootDir%/../../../tests/_*
+    autoload_directories:
+        - %rootDir%/../../../tests/
