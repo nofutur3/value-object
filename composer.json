@@ -1,0 +1,42 @@
+{
+    "name": "nofutur3/value-object",
+    "type": "library",
+    "description": "Collection of value objects for PHP",
+    "keywords": ["value object", "vanilla", "PHP"],
+    "homepage": "https://vyvazil.cz",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jakub Vyvazil",
+            "homepage":"https://www.vyvazil.cz",
+            "email": "jakub@vyvazil.cz"
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "php": ">=7.1"
+    },
+    "require-dev": {
+        "codeception/codeception": "^2.5",
+        "friendsofphp/php-cs-fixer": "^2.10",
+        "phpstan/phpstan": "^0.11.1"
+    },
+    "autoload": {
+        "psr-0" : {
+            "Nofutur3\\ValueObject\\": "src/"
+        }
+    },
+    "scripts":{
+        "ci": [
+            "@cs-check",
+            "@stan",
+            "@test"
+        ],
+        "cs-fix": "vendor/bin/php-cs-fixer fix",
+        "cs-check": "vendor/bin/php-cs-fixer fix --stop-on-violation --dry-run",
+        "stan": "vendor/bin/phpstan analyse --no-progress --level=max --configuration=phpstan.neon src tests",
+        "test": ["vendor/bin/codecept build","vendor/bin/codecept run"]
+    }
+}
