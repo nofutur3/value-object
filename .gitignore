@@ -1,0 +1,10 @@
+*.iml
+.idea/
+.idea_modules/
+
+/vendor
+composer.lock
+/tests/_output/*
+/tests/_support/_generated/*
+.php_cs.cache
+!.gitkeep
