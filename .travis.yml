@@ -8,6 +8,7 @@ php:
 before_script:
   - composer self-update
   - composer install --no-interaction --prefer-source
+  - vendor/bin/codecept build
 
 script:
   - composer ci
