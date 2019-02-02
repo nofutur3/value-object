@@ -31,8 +31,8 @@
     "scripts":{
         "ci": [
             "@cs-check",
-            "@stan",
-            "@test"
+            "@test",
+            "@stan"
         ],
         "cs-fix": "vendor/bin/php-cs-fixer fix",
         "cs-check": "vendor/bin/php-cs-fixer fix --stop-on-violation --dry-run",
