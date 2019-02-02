@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Nofutur3\ValueObject\User;
 
+use Nofutur3\ValueObject\Base;
+
 class Email extends Base
 {
     /** @var string */
