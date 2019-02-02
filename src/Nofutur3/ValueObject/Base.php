@@ -31,6 +31,12 @@ abstract class Base implements Comparable
             $result[$property->getName()] = $property->getValue($this);
         }
 
-        return md5(\json_encode($result));
+        $encoded = \json_encode($result);
+
+        if (false === $encoded) {
+            throw new \ErrorException('Not able to serialize properties, please create issue at https://github.com/nofutur3/value-object');
+        }
+
+        return md5($encoded);
     }
 }
