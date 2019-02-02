@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Nofutur3\ValueObject;
+namespace Nofutur3\ValueObject\User;
 
 class Email extends Base
 {

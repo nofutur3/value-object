@@ -1,5 +1,7 @@
 <?php
 
+use Nofutur3\ValueObject\User\Email;
+
 class EmailCest
 {
     public function _before(UnitTester $I)
@@ -12,9 +14,9 @@ class EmailCest
     public function testEmailValidation(UnitTester $I, \Codeception\Example $example)
     {
         if (!$example['result']) {
-            $I->expectThrowable(\InvalidArgumentException::class, function () use ($example) {new \Nofutur3\ValueObject\Email($example['email']); });
+            $I->expectThrowable(\InvalidArgumentException::class, function () use ($example) {new Email($example['email']); });
         } else {
-            $I->assertSame($example['email'], (string) new \Nofutur3\ValueObject\Email($example['email']));
+            $I->assertSame($example['email'], (string) new Email($example['email']));
         }
     }
 
